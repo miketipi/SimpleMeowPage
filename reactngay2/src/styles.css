@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Comic Neue", cursive;
+}
+
+section {
+  margin-top: 80px;
+}
+
+.cat-list {
+  list-style-type: none;
+}
+
+.cat-item {
+  background-color: #add8e6;
+  margin: 0 auto 20px auto;
+  border-radius: 20px;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cat-item-link {
+  text-decoration: none;
+  color: white;
+}
+
+.cat-item-img {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.cat-item-desc {
+  padding: 10px 0 2px 20px;
+  text-align: center;
+}
+
+.cat-item-name {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* create form */
+#create-cat,
+#cats {
+  text-align: center;
+}
+
+#catForm {
+  margin: auto;
+}
+
+form {
+  max-width: 500px;
+}
+
+input,
+select,
+label {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 6px 0 8px 0;
+}
+
+input,
+select {
+  border: 1px solid #333333;
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #add8e6;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}

@@ -8,7 +8,8 @@ function CatList(props){
         return (<CatItem name = {cat.name} 
             stage = {cat.stage}
             breed = {cat.breed}
-            imageUrl = {cat.imageUrl} />);
+            imageUrl = {cat.imageUrl}
+            gender = {cat.gender} />);
     })}
     </ul>
     </section>);

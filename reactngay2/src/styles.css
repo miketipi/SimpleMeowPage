@@ -36,7 +36,7 @@ section {
   text-align: center;
 }
 
-.cat-item-name {
+.cat-item-name, .cat-item-gender {
   font-size: 24px;
   margin: 0;
 }

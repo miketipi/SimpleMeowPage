@@ -12,6 +12,7 @@ function CatItem(props){
             <h3 class="cat-item-name">{props.name}</h3>
             <p class="cat-item-stage">{props.stage}</p>
             <p class="cat-item-breed">{props.breed}</p>
+            <p class="cat-item-gender">{props.gender}</p>
           </div>
         </a>
       </li>

@@ -49,12 +49,13 @@ function setCatItemColor() {
     catItem.style.background = linearGradient;
   });
 }
-const handleCatSubmit = (name,stage,breed, imageUrl) => {
+const handleCatSubmit = (name,stage,breed, imageUrl,gender) => {
   const newCat = {
     name,
     stage,
     breed, 
-    imageUrl
+    imageUrl,
+    gender
   };
   setCats((prevCats) => [newCat, ...prevCats]); //truyen newCat vao dau mang roi duyet de them cac thanh phan cu vao mang
 };

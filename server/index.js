@@ -44,3 +44,37 @@ app.post("/cats", (req, res) => {
     }
     catch{res.status(404).send("Không thêm được vì đã xuất hiện lỗi")}
 })
+app.put("/cats/:id", (req, res) =>{
+    try{
+        const id = req.params.id;
+        const {name , breed, avatar, stage, gender} = req.body;
+        const catArrayIndex = cats.findIndex((cat) => id == cat.id);
+        if (catArrayIndex === -1) {
+            res.status(404).send("Không có con mèo này");
+          } else{
+        const updatedCat = {
+            id : id,
+            name : name || cats[catArrayIndex].name,
+            breed : breed || cats[catArrayIndex].breed,
+            avatar :avatar || cats[catArrayIndex].avatar,
+            stage : stage || cats[catArrayIndex].stage,
+            gender : gender || cats[catArrayIndex].gender
+        }
+        cats[catArrayIndex] = updatedCat;
+        res.status(200).send("Đã sửa thành công con mèo này!");
+    }
+    }
+    catch {
+        res.status(404).send("Đã có lỗi trong quá trình sửa lỗi");
+    }
+})
+app.delete("/cats/:id", (req, res) => {
+    const id = req.params.id;
+    const catArrayIndex = cats.find((cat) => cat.id == id);
+    if (catArrayIndex < 0) {
+        res.status(404).send("Chú mèo này chưa từng tồn tại!");
+    } else{
+        cats.splice(catArrayIndex,1);
+        res.status(200).send("Đã xoá được chú mèo này thành công!");
+    }
+})

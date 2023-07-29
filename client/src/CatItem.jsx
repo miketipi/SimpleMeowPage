@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Route } from "react-router-dom";
+import CatDetail from "./CatDetail";
+import { useParams } from "react-router-dom";
 function CatItem({ cat }) {
   const generateLinearGradient = (text) => {
     let hash = 0;
@@ -20,7 +24,7 @@ function CatItem({ cat }) {
   const linearGradient = generateLinearGradient(cat.name);
   return (
     <li className="cat-item" style={{ background: linearGradient }}>
-      <a className="cat-item-link" href="#">
+      <a href="#" className="cat-item-link">
         <img className="cat-item-img" src={cat.avatar} alt="" />
         <div className="cat-item-desc">
           <h3 className="cat-item-name">{cat.name}</h3>

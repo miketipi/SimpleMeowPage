@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 8080;
+const cors = require("cors");
 app.use(express.json());
+app.use(cors()); //enable cors de khong co loi
+let nextId = 2;
 const cats = [{
     id: 1,
     name: "Whiskers",
@@ -37,10 +40,11 @@ app.get('/cats/:id', (req,res) => {
 app.post("/cats", (req, res) => {
     try{
     const {name , breed, avatar, stage, gender} = req.body;
-    const id = cats.length + 1;
+    const id = nextId + 1;
+    nextId++;
     const newCat = {id, name, stage, breed, gender, avatar};
     cats.push(newCat);
-    res.status(200).send("Đã thêm thành công con mèo có tên " + name);
+    res.json(newCat);
     }
     catch{res.status(404).send("Không thêm được vì đã xuất hiện lỗi")}
 })
@@ -61,7 +65,7 @@ app.put("/cats/:id", (req, res) =>{
             gender : gender || cats[catArrayIndex].gender
         }
         cats[catArrayIndex] = updatedCat;
-        res.status(200).send("Đã sửa thành công con mèo này!");
+        res.json(updatedCat);
     }
     }
     catch {
